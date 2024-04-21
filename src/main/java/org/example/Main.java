@@ -2,14 +2,18 @@ package org.example;
 
 
 import ar.unrn.database.ArchivoRegistro;
+import ar.unrn.database.PersistenciaRegistro;
 import ar.unrn.model.IApiRegistro;
 import ar.unrn.ui.RegistroCiudadano;
 
+import java.io.File;
+import java.nio.file.Path;
+
 public class Main {
 	public static void main(String[] args) {
-		IApiRegistro api = new ArchivoRegistro("C:\\Users\\leonr\\OneDrive\\Escritorio\\Inscriptos.txt", "C:\\Users\\leonr\\OneDrive\\Escritorio\\Concursos.txt");
-		var ventanaDeRegistroDeCiudadano = new RegistroCiudadano(api);
-
+		IApiRegistro apiArchivo = new ArchivoRegistro(new File("C:\\Users\\leonr\\OneDrive\\Escritorio\\Inscriptos.txt"), new File("C:\\Users\\leonr\\OneDrive\\Escritorio\\Concursos.txt"));
+		IApiRegistro apiPersistencia = new PersistenciaRegistro();
+		var ventanaDeRegistroDeCiudadano = new RegistroCiudadano(apiPersistencia);
 	}
 
 }

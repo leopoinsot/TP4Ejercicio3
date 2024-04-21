@@ -68,8 +68,7 @@ public class RegistroCiudadano {
 				btnOk.setEnabled(false);
 				if(comboBox.getSelectedItem() != null){
 					var concurso = (Concurso) comboBox.getSelectedItem();
-					api.saveInscription(lblName.getText(),lblLastName.getText(), lblPhone.getText(), lblEmail.getText(), concurso.obtenerId());
-
+					api.saveInscription(txtName.getText(),txtLastName.getText(), txtPhone.getText(), txtEmail.getText(), concurso.obtenerId());
 				}
 				btnOk.setEnabled(true);
 			}

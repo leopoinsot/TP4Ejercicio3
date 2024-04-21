@@ -15,6 +15,13 @@ public class Ciudadano {
 		Email = email;
 		this.telefono = telefono;
 	}
+	public Ciudadano(String nombre, String apellido, String email, String telefono) throws RuntimeException{
+		validarDatos(dni,nombre, apellido, email, telefono);
+		this.nombre = nombre;
+		this.apellido = apellido;
+		Email = email;
+		this.telefono = telefono;
+	}
 
 	private void validarDatos(String dni, String nombre, String apellido, String email, String telefono) throws RuntimeException{
 
@@ -41,10 +48,6 @@ public class Ciudadano {
 	private boolean checkPhone(String telefono) {
 		String regex = "\\d{4}-\\d{6}";
 		return telefono.matches(regex);
-	}
-
-	public String obtenerDni() {
-		return dni;
 	}
 
 	public String obtenerNombre() {
